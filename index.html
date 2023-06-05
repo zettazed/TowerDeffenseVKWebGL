@@ -54,11 +54,11 @@
     }
 
     var buildUrl = "Build";
-    var loaderUrl = buildUrl + "/1.loader.js";
+    var loaderUrl = buildUrl + "/2.loader.js";
     var config = {
-      dataUrl: buildUrl + "/1.data.unityweb",
-      frameworkUrl: buildUrl + "/1.framework.js.unityweb",
-        codeUrl: buildUrl + "/1.wasm.unityweb",
+      dataUrl: buildUrl + "/2.data.unityweb",
+      frameworkUrl: buildUrl + "/2.framework.js.unityweb",
+        codeUrl: buildUrl + "/2.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
       companyName: "ZettaZed",
     productName: "Eta shtuka poka ne rabotaet, nu i ladno",
@@ -99,15 +99,21 @@
     document.body.appendChild(script);
 
     function showInterstitial ()
-  {
-    vkBridge.send('VKWebAppShowNativeAds', {ad_format:"interstitial"}).then(data => {console.log(data);});
-  }
+    {
+      vkBridge.send('VKWebAppShowNativeAds', {ad_format:"interstitial"}).then(data => {console.log(data);});
+    }
 
-  function showRewardedGift ()
-  {
-    vkBridge.send('VKWebAppShowNativeAds', {ad_format:"reward"}).then(data => {console.log(data);
-    unityInstance.SendMessage('TheAdsManager', 'RewardPlacement', JSON.stringify(data.result));});
-  }
+    function showRewarded ()
+    {
+      vkBridge.send('VKWebAppShowNativeAds', {ad_format:"reward"}).then(data => {console.log(data);
+      unityInstance.SendMessage('TheAdsManager', 'Gem', JSON.stringify(data.result));});
+    }
+
+    function showRewardedGift ()
+    {
+      vkBridge.send('VKWebAppShowNativeAds', {ad_format:"reward"}).then(data => {console.log(data);
+      unityInstance.SendMessage('TheAdsManager', 'RewardPlacement', JSON.stringify(data.result));});
+    }
 
     jQuery(document).ready(function($) // страница прогружена
     {

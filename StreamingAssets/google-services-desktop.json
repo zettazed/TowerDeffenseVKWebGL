@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "353335650242",
+    "project_id": "tower-defense-58e83",
+    "storage_bucket": "tower-defense-58e83.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:353335650242:android:da6ca2987a47b95d55185b",
+        "android_client_info": {
+          "package_name": "com.finik.tower"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "353335650242-o5iv1ie5mlsj1nn7gniik6bjdfupm54u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgn6ZRvSqvU80T8hEo4IJoQfrlq4Yf7XM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "353335650242-o5iv1ie5mlsj1nn7gniik6bjdfupm54u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
