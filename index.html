@@ -103,7 +103,7 @@
       vkBridge.send('VKWebAppShowNativeAds', {ad_format:"interstitial"}).then(data => {console.log(data);});
     }
 
-    function showRewarded ()
+     function showRewarded ()
     {
       vkBridge.send('VKWebAppShowNativeAds', {ad_format:"reward"}).then(data => {console.log(data);
       unityInstance.SendMessage('TheAdsManager', 'Gem', JSON.stringify(data.result));});
