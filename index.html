@@ -118,6 +118,24 @@
       unityInstance.SendMessage('TheAdsManager', 'RewardPlacement', JSON.stringify(data.result));});
     }
 
+    vkBridge.subscribe(eventHandler); 
+    function eventHandler(e) {
+
+      const { type, data } = e.detail;
+      switch(type) {
+        case 'VKWebAppViewHide':
+          unityInstance.SendMessage('VKManager', 'AudioOff', JSON.stringify(data.result)); // Останавливаем воспроизведение аудио 
+          break;
+        case 'VKWebAppViewRestore': 
+          unityInstance.SendMessage('VKManager', 'AudioOn', JSON.stringify(data.result)); // Запускаем воспроизведение
+          break;
+                
+          // Обработчики других событий
+          // ...
+
+        }
+    }
+
     jQuery(document).ready(function($) // страница прогружена
     {
       vkBridge.send('VKWebAppInit');
