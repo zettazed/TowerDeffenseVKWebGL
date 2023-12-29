@@ -118,7 +118,7 @@
       unityInstance.SendMessage('TheAdsManager', 'RewardPlacement', JSON.stringify(data.result));});
     }
 
-    bridge.subscribe((e) => {
+    vkBridge.subscribe((e) => {
       if (e.detail.type === 'VKWebAppViewHide') {
         unityInstance.SendMessage('VKManager', 'AudioOff', JSON.stringify(data.result)); // Останавливаем воспроизведение аудио 
         // Действия при переключении
@@ -126,7 +126,7 @@
       }
     });
     
-    bridge.subscribe((e) => {
+    vkBridge.subscribe((e) => {
       if (e.detail.type === 'VKWebAppViewRestore') {
         unityInstance.SendMessage('VKManager', 'AudioOn', JSON.stringify(data.result)); // Запускаем воспроизведение
         // Действия при восстановлении 
